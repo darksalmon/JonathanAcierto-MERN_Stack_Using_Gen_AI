@@ -1,0 +1,138 @@
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #e85d04;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.header h1 {
+    margin-bottom: 0px;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    width: 350px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #e85d04;
+}
+
+/* Food container - Flexbox */
+.food-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Individual food card */
+.food-container div {
+    background-color: white;
+    width: 280px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Food image */
+.food-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: zoom-in;
+}
+
+/* Expand image to fit inside the vp centered with margins, keep proportions */
+.food-container img.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    object-fit: contain;
+    z-index: 1100;
+    transform: translate(-50%, -50%);
+    cursor: zoom-out;
+}
+
+/* Food name */
+.food-container b {
+    display: block;
+    margin: 12px 0;
+    color: #e85d04;
+    font-size: 18px;
+}
+
+/* Food description */
+.food-container .card-description i {
+    display: block;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Horizontal line */
+.food-container hr {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: auto;
+}
+
+/* Login Box */
+.login-box {
+    width: 100%;
+    max-width: 420px;
+}
+

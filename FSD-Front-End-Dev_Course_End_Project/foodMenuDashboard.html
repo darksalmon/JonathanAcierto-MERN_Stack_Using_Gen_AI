@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="foodMenuApp.js" defer></script>
+</head>
+
+<body onload="loadFoodDetails()" class="d-flex flex-column min-vh-100">
+
+    <header class="header">
+        <h1>Discover Delicious Meals</h1>
+        <span>Welcome <span id="userName"></span>
+    </header>
+    <hr style="border: none; height: 1px; background-color: #f8f7f7; margin: 0;">
+    <hr style="border: none; height: 7px; background-color: #725335; margin: 0;">
+    <main class="container">
+        <h2 class="mt-0">Explore Our Menu</h2>
+        <div class="search-box">
+            <input type="text" id="foodName"
+            placeholder="Search food name...">
+        <!-- Cart Icon Button with a counter badge -->
+        <button id="cartToggleBtn" class="btn btn-primary" style="padding: 10px 15px; cursor: pointer; font-size: 14px;">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </button>
+        </div>
+        <section id="result" class="food-container"></section>
+    </main>
+    <footer class="footer">
+        <p class="m-0">© 2026 Online Food App | All Rights Reserved</p>
+        <p class="m-0" style="font-size: 1rem;">Darksalmon Networks <i class="bi bi-badge-tm" aria-hidden="true"></i></p>
+    </footer>
+    <!-- Sliding Cart Drawer Container (Hidden by default off-screen) -->
+    <div id="cartDrawer" style="position: fixed; top: 0; right: -350px; width: 300px; height: 100%; background: white; box-shadow: -2px 0 5px rgba(0,0,0,0.2); transition: right 0.3s ease; padding: 20px; box-sizing: border-box; z-index: 1000; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+            <h3>Shopping Cart</h3>
+            <button id="closeDrawerBtn" class="h3 mb-0" type="button" aria-label="Close cart" style="cursor: pointer; background: none; border: none; color: #e85d04;">
+                <i class="bi bi-arrow-right-square-fill" aria-hidden="true"></i>
+            </button>
+        </div>
+        
+        <!-- Where cart items will be dynamically listed -->
+        <div id="cartItemsContainer" style="margin-top: 20px;"></div>
+        
+        <!-- Cart Footer / Total -->
+        <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px;">
+            <h4 id="cartTotal">Total Dishes: 0</h4>
+            <h4 id="cartCost">Total Cost: $0.00</h4>
+            <button id="checkoutBtn" onclick="alert('Proceeding to checkout!')" style="width: 100%; padding: 10px; background: green; color: white; border: non; cursor: pointer; border-radius: 4px;">Checkout</button>
+        </div>
+    </div>
+</body>
+</html>
